@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hover Event Example</title>
+	<style>
+		.hover-content {
+			display: none;
+			text-align:center;
+			margin-top: 35px;
+		}
+		
+		.hovered {
+			color: red;
+			cursor: pointer;
+		}
+		</style>
+		</head>
+		
+	<body>
+			<h1 class="hovered">Never touch this!</h1>
+			<div class="hover-content">
+				<img src="/home/lab1/Downloads/baby.jpeg" height="400" width="600"  alt="New Image">
+				<h1>Now Run For Your Life Human</h1>
+			</div>
+			
+		<script>
+				var hoverText=document.querySelector('.hovered');
+				var hoverContent=document.querySelector('.hover-content');
+				hoverText.addEventListener('mouseover',function(){
+				hoverContent.style.display='block';
+			});
+				hoverText.addEventListener('mouseout',function(){
+				hoverContent.style.display='none';
+			});
+		</script>
+	</body>
+</html>
