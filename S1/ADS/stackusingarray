@@ -1,0 +1,70 @@
+Enter the size of the Stack:4
+
+
+1.Push
+2.Pop
+3.Display
+4.Search
+5.Exit
+
+Enter Your Choice:
+1
+Enter the element to be inserted : 1
+
+
+1.Push
+2.Pop
+3.Display
+4.Search
+5.Exit
+
+Enter Your Choice:
+1
+Enter the element to be inserted : 3
+
+
+1.Push
+2.Pop
+3.Display
+4.Search
+5.Exit
+
+Enter Your Choice:
+1
+Enter the element to be inserted : 5
+
+
+1.Push
+2.Pop
+3.Display
+4.Search
+5.Exit
+
+Enter Your Choice:
+3
+The Stack is : 
+5
+3
+1
+
+
+1.Push
+2.Pop
+3.Display
+4.Search
+5.Exit
+
+Enter Your Choice:
+4
+Enter the element to be searched : 3
+Element Found at the stack
+
+1.Push
+2.Pop
+3.Display
+4.Search
+5.Exit
+
+Enter Your Choice:
+5
+

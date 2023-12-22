@@ -1,0 +1,8 @@
+Enter the size of array a: 5
+Enter the elements for array: 1 3 5 7 9
+Enter the size of array b: 5 
+Enter the elements for array: 0 2 4 6 8 
+
+ Array a: 13579
+ Array b: 02468
+ Array c: 0123456789

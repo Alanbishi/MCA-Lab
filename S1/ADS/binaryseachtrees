@@ -1,0 +1,86 @@
+lab1@lab1-OptiPlex-390:~/Desktop/Alan Bishi/ADS$ ./a.out
+
+1)Create Root Node 
+2)Insert Node
+3)Search
+4)preorederTraversal 
+5)Delete
+6)Quit
+Choose an option: 1
+
+Enter a number: 40
+
+1)Create Root Node 
+2)Insert Node
+3)Search
+4)preorederTraversal 
+5)Delete
+6)Quit
+Choose an option: 2
+
+Enter a number: 20
+
+1)Create Root Node 
+2)Insert Node
+3)Search
+4)preorederTraversal 
+5)Delete
+6)Quit
+Choose an option: 2
+
+Enter a number: 10
+
+1)Create Root Node 
+2)Insert Node
+3)Search
+4)preorederTraversal 
+5)Delete
+6)Quit
+Choose an option: 4
+
+........................
+40->20->10->
+........................
+
+1)Create Root Node 
+2)Insert Node
+3)Search
+4)preorederTraversal 
+5)Delete
+6)Quit
+Choose an option: 3
+
+Enter a number: 20
+
+FOUND!
+
+1)Create Root Node 
+2)Insert Node
+3)Search
+4)preorederTraversal 
+5)Delete
+6)Quit
+Choose an option: 5
+
+Enter a number to be deleted:40
+
+1)Create Root Node 
+2)Insert Node
+3)Search
+4)preorederTraversal 
+5)Delete
+6)Quit
+Choose an option: 4
+
+........................
+40->
+........................
+
+1)Create Root Node 
+2)Insert Node
+3)Search
+4)preorederTraversal 
+5)Delete
+6)Quit
+Choose an option: 6
+

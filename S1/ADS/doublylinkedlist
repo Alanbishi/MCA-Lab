@@ -1,0 +1,156 @@
+1.Display
+2.Insertion at Starting
+3.Insertion at end
+4.Insertion at any position
+5.Delete First Element
+6.Delete Last Element
+7.Delete Element at any position
+8.Search
+9.Exit
+
+Enter Your Choice:
+1
+
+List is empty
+1.Display
+2.Insertion at Starting
+3.Insertion at end
+4.Insertion at any position
+5.Delete First Element
+6.Delete Last Element
+7.Delete Element at any position
+8.Search
+9.Exit
+
+Enter Your Choice:
+2
+
+Enter value: 10
+
+1.Display
+2.Insertion at Starting
+3.Insertion at end
+4.Insertion at any position
+5.Delete First Element
+6.Delete Last Element
+7.Delete Element at any position
+8.Search
+9.Exit
+
+Enter Your Choice:
+3
+
+Enter value: 20
+
+1.Display
+2.Insertion at Starting
+3.Insertion at end
+4.Insertion at any position
+5.Delete First Element
+6.Delete Last Element
+7.Delete Element at any position
+8.Search
+9.Exit
+
+Enter Your Choice:
+1
+10->20->
+1.Display
+2.Insertion at Starting
+3.Insertion at end
+4.Insertion at any position
+5.Delete First Element
+6.Delete Last Element
+7.Delete Element at any position
+8.Search
+9.Exit
+
+Enter Your Choice:
+5
+
+10 deleted
+1.Display
+2.Insertion at Starting
+3.Insertion at end
+4.Insertion at any position
+5.Delete First Element
+6.Delete Last Element
+7.Delete Element at any position
+8.Search
+9.Exit
+
+Enter Your Choice:
+1
+20->null
+1.Display
+2.Insertion at Starting
+3.Insertion at end
+4.Insertion at any position
+5.Delete First Element
+6.Delete Last Element
+7.Delete Element at any position
+8.Search
+9.Exit
+
+Enter Your Choice:
+6
+
+20 deleted
+1.Display
+2.Insertion at Starting
+3.Insertion at end
+4.Insertion at any position
+5.Delete First Element
+6.Delete Last Element
+7.Delete Element at any position
+8.Search
+9.Exit
+
+Enter Your Choice:
+1
+
+List is empty
+1.Display
+2.Insertion at Starting
+3.Insertion at end
+4.Insertion at any position
+5.Delete First Element
+6.Delete Last Element
+7.Delete Element at any position
+8.Search
+9.Exit
+
+Enter Your Choice:
+2
+
+Enter value: 30
+
+1.Display
+2.Insertion at Starting
+3.Insertion at end
+4.Insertion at any position
+5.Delete First Element
+6.Delete Last Element
+7.Delete Element at any position
+8.Search
+9.Exit
+
+Enter Your Choice:
+8
+
+Enter element to search: 30
+
+Item found at position 1
+1.Display
+2.Insertion at Starting
+3.Insertion at end
+4.Insertion at any position
+5.Delete First Element
+6.Delete Last Element
+7.Delete Element at any position
+8.Search
+9.Exit
+
+Enter Your Choice:
+9
+

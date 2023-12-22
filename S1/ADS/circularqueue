@@ -1,0 +1,105 @@
+lab1@lab1-OptiPlex-390:~/Desktop/Alan Bishi/ADS$ gcc circularqueue.c
+lab1@lab1-OptiPlex-390:~/Desktop/Alan Bishi/ADS$ ./a.out
+Enter the size of the queue:4
+
+
+1.Insertion
+2.Deletion
+3.Display
+4.Search
+5.Exit
+
+Enter Your Choice:
+1
+Enter the element to insert:2
+
+
+1.Insertion
+2.Deletion
+3.Display
+4.Search
+5.Exit
+
+Enter Your Choice:
+1
+Enter the element to insert:4
+
+
+1.Insertion
+2.Deletion
+3.Display
+4.Search
+5.Exit
+
+Enter Your Choice:
+1
+Enter the element to insert:6
+
+
+1.Insertion
+2.Deletion
+3.Display
+4.Search
+5.Exit
+
+Enter Your Choice:
+2
+Deleted element is 2
+
+1.Insertion
+2.Deletion
+3.Display
+4.Search
+5.Exit
+
+Enter Your Choice:
+3
+Front=1
+Rear=2
+Queue is:
+4	6	
+
+1.Insertion
+2.Deletion
+3.Display
+4.Search
+5.Exit
+
+Enter Your Choice:
+4
+Enter the element to search:
+6
+Element found at position 2
+
+1.Insertion
+2.Deletion
+3.Display
+4.Search
+5.Exit
+
+Enter Your Choice:
+2
+Deleted element is 4
+
+1.Insertion
+2.Deletion
+3.Display
+4.Search
+5.Exit
+
+Enter Your Choice:
+3
+Front=2
+Rear=2
+Queue is:
+6	
+
+1.Insertion
+2.Deletion
+3.Display
+4.Search
+5.Exit
+
+Enter Your Choice:
+5
+
