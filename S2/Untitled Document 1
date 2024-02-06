@@ -1,0 +1,225 @@
+--MYSQL
+
+
+
+
+
+mysql -u root -p
+Enter password: root
+--successfully opened!
+
+
+--DDL COMMANDS
+
+
+mysql> create database alan_db;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use alan_db;
+Database changed
+
+
+mysql> create table 
+    -> student
+    -> (Roll_no INT PRIMARY KEY,
+    -> name VARCHAR(30),
+    -> age INT,
+    -> course VARCHAR(30),
+    -> year INT);
+Query OK, 0 rows affected (0.38 sec)
+
+
+mysql> DESC student;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| Roll_no | int(11)     | NO   | PRI | NULL    |       |
+| name    | varchar(30) | YES  |     | NULL    |       |
+| age     | int(11)     | YES  |     | NULL    |       |
+| course  | varchar(30) | YES  |     | NULL    |       |
+| year    | int(11)     | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+
+mysql> ALTER TABLE student
+    -> ADD mob_no INT;
+Query OK, 0 rows affected (0.76 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC student;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| Roll_no | int(11)     | NO   | PRI | NULL    |       |
+| name    | varchar(30) | YES  |     | NULL    |       |
+| age     | int(11)     | YES  |     | NULL    |       |
+| course  | varchar(30) | YES  |     | NULL    |       |
+| year    | int(11)     | YES  |     | NULL    |       |
+| mob_no  | int(11)     | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+
+
+mysql> ALTER TABLE student
+    -> DROP COLUMN age;
+Query OK, 0 rows affected (0.38 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC student;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| Roll_no | int(11)     | NO   | PRI | NULL    |       |
+| name    | varchar(30) | YES  |     | NULL    |       |
+| course  | varchar(30) | YES  |     | NULL    |       |
+| year    | int(11)     | YES  |     | NULL    |       |
+| mob_no  | int(11)     | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+
+mysql> ALTER TABLE student  CHANGE year  course_duration int;
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC student;
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| Roll_no         | int(11)     | NO   | PRI | NULL    |       |
+| name            | varchar(30) | YES  |     | NULL    |       |
+| course          | varchar(30) | YES  |     | NULL    |       |
+| course_duration | int(11)     | YES  |     | NULL    |       |
+| mob_no          | int(11)     | YES  |     | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+
+
+mysql> INSERT INTO student (Roll_no,name,course,course_duration,mob_no)
+ VALUES (1,'Albin','MBBS',7,887875487);
+Query OK, 1 row affected (0.04 sec)
+
+
+
+mysql> SELECT * FROM student;
++---------+-------+--------+-----------------+-----------+
+| Roll_no | name  | course | course_duration | mob_no    |
++---------+-------+--------+-----------------+-----------+
+|       1 | Albin | MBBS   |               7 | 887875487 |
++---------+-------+--------+-----------------+-----------+
+1 row in set (0.03 sec)
+
+
+
+
+
+mysql> TRUNCATE TABLE student;
+Query OK, 0 rows affected (0.29 sec)
+
+mysql> SELECT * FROM student;
+Empty set (0.00 sec)
+
+
+
+
+
+---DML COMMANDS
+
+
+mysql> INSERT INTO student  VALUES (1,'Albin','MBBS',7,887875487),(2,'Joy','LLB',4,96756),(3,'Alby','Mphil',6,866574764);
+Query OK, 3 rows affected (0.03 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM student;
++---------+-------+--------+-----------------+-----------+
+| Roll_no | name  | course | course_duration | mob_no    |
++---------+-------+--------+-----------------+-----------+
+|       1 | Albin | MBBS   |               7 | 887875487 |
+|       2 | Joy   | LLB    |               4 |     96756 |
+|       3 | Alby  | Mphil  |               6 | 866574764 |
++---------+-------+--------+-----------------+-----------+
+3 rows in set (0.02 sec)
+
+
+
+
+
+
+
+------------EMPLOYEES TABLE
+
+
+
+--CREATE TABLE
+
+mysql> use alan_db;
+Database changed
+mysql> CREATE TABLE
+    -> employees
+    -> (emp_id INT PRIMARY KEY,
+    -> name VARCHAR (30),
+    -> age INT,
+    -> salary INT,
+    -> dept VARCHAR(30) );
+Query OK, 0 rows affected (0.26 sec)
+
+mysql> DESC employees;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| emp_id | int(11)     | NO   | PRI | NULL    |       |
+| name   | varchar(30) | YES  |     | NULL    |       |
+| age    | int(11)     | YES  |     | NULL    |       |
+| salary | int(11)     | YES  |     | NULL    |       |
+| dept   | varchar(30) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.04 sec)
+
+
+
+
+--INSERTING VALUES
+
+mysql> INSERT INTO employees
+    -> VALUES (111,'alan',22,125000,'manufacturing'),(123,'albin',64,14000,'cleaning'),(234,'alby',21,75500,'HR'),(432,'josin',24,30000,'finance'),(542,'Ann',21,62000,'taxation');
+Query OK, 5 rows affected (0.07 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM employees;
++--------+-------+------+--------+---------------+
+| emp_id | name  | age  | salary | dept          |
++--------+-------+------+--------+---------------+
+|    111 | alan  |   22 | 125000 | manufacturing |
+|    123 | albin |   64 |  14000 | cleaning      |
+|    234 | alby  |   21 |  75500 | HR            |
+|    432 | josin |   24 |  30000 | finance       |
+|    542 | Ann   |   21 |  62000 | taxation      |
++--------+-------+------+--------+---------------+
+5 rows in set (0.00 sec)
+
+
+
+
+--DELETE ROW
+
+mysql> DELETE FROM employees WHERE emp_id=542;
+Query OK, 1 row affected (0.14 sec)
+
+mysql> SELECT * FROM employees;
++--------+-------+------+--------+---------------+
+| emp_id | name  | age  | salary | dept          |
++--------+-------+------+--------+---------------+
+|    111 | alan  |   22 | 125000 | manufacturing |
+|    123 | albin |   64 |  14000 | cleaning      |
+|    234 | alby  |   21 |  75500 | HR            |
+|    432 | josin |   24 |  30000 | finance       |
++--------+-------+------+--------+---------------+
+4 rows in set (0.00 sec)
+
+
+
+
+
