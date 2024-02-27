@@ -1,0 +1,202 @@
+mysql> use alan_db
+
+Database changed
+
+
+
+mysql> Create table EMPLOYEES
+    -> (Emp_id int,Name varchar(30),Gender varchar(20),Department varchar(30),Education varchar(30),Join_month varchar(30),Salary int);
+Query OK, 0 rows affected (0.42 sec)
+
+mysql> DESC EMPLOYEES;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| Emp_id     | int(11)     | YES  |     | NULL    |       |
+| Name       | varchar(30) | YES  |     | NULL    |       |
+| Gender     | varchar(20) | YES  |     | NULL    |       |
+| Department | varchar(30) | YES  |     | NULL    |       |
+| Education  | varchar(30) | YES  |     | NULL    |       |
+| Join_month | varchar(30) | YES  |     | NULL    |       |
+| Salary     | int(11)     | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+7 rows in set (0.03 sec)
+
+
+
+
+
+
+mysql> insert into EMPLOYEES
+    -> VALUES(1001,'Ajay','M','Engineer','Doctorate','January',25);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into EMPLOYEES
+    -> VALUES(1002,'Babloo','M','Engineer','UG','February',23);
+Query OK, 1 row affected (0.06 sec)
+mysql> insert into EMPLOYEES
+    -> VALUES(1003,'Chavi','F','HR','PG','March',15);Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into EMPLOYEES
+    -> VALUES(1004,'Dheeraj','M','HR','UG','January',12);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into EMPLOYEES
+    -> VALUES(1005,'Evina','F','Marketing','UG','March',16);
+Query OK, 1 row affected (0.06 sec)
+
+
+
+
+
+
+mysql> SELECT * FROM EMPLOYEES;
++--------+---------+--------+------------+-----------+------------+--------+
+| Emp_id | Name    | Gender | Department | Education | Join_month | Salary |
++--------+---------+--------+------------+-----------+------------+--------+
+|   1001 | Ajay    | M      | Engineer   | Doctorate | January    |     25 |
+|   1002 | Babloo  | M      | Engineer   | UG        | February   |     23 |
+|   1003 | Chavi   | F      | HR         | PG        | March      |     15 |
+|   1004 | Dheeraj | M      | HR         | UG        | January    |     12 |
+|   1005 | Evina   | F      | Marketing  | UG        | March      |     16 |
++--------+---------+--------+------------+-----------+------------+--------+
+5 rows in set (0.00 sec)
+
+
+
+
+
+
+mysql> SELECT Department,SUM(Salary) 
+	  >FROM EMPLOYEES
+     >GROUP BY Department;
++------------+-------------+
+| Department | SUM(Salary) |
++------------+-------------+
+| Engineer   |          48 |
+| HR         |          27 |
+| Marketing  |          16 |
++------------+-------------+
+3 rows in set (0.02 sec)
+
+
+
+
+mysql> SELECT Department,SUM(Salary)
+    -> FROM EMPLOYEES
+    -> GROUP BY Department
+    -> HAVING SUM(Salary)>=20;
++------------+-------------+
+| Department | SUM(Salary) |
++------------+-------------+
+| Engineer   |          48 |
+| HR         |          27 |
++------------+-------------+
+2 rows in set (0.05 sec)
+
+
+
+
+mysql> SELECT DISTINCT Department FROM EMPLOYEES;
++------------+
+| Department |
++------------+
+| Engineer   |
+| HR         |
+| Marketing  |
++------------+
+
+
+
+
+mysql> SELECT COUNT(Salary) FROM EMPLOYEES;
++---------------+
+| COUNT(Salary) |
++---------------+
+|             5 |
++---------------+
+
+
+
+
+
+mysql> SELECT * FROM EMPLOYEES where Department='Engineer' and Education='Doctorate';
++--------+------+--------+------------+-----------+------------+--------+
+| Emp_id | Name | Gender | Department | Education | Join_month | Salary |
++--------+------+--------+------------+-----------+------------+--------+
+|   1001 | Ajay | M      | Engineer   | Doctorate | January    |     25 |
++--------+------+--------+------------+-----------+------------+--------+
+1 row in set (0.00 sec)
+
+
+
+
+
+
+
+mysql> SELECT * FROM EMPLOYEES where Department='Engineer' or Education='Doctorate';
++--------+--------+--------+------------+-----------+------------+--------+
+| Emp_id | Name   | Gender | Department | Education | Join_month | Salary |
++--------+--------+--------+------------+-----------+------------+--------+
+|   1001 | Ajay   | M      | Engineer   | Doctorate | January    |     25 |
+|   1002 | Babloo | M      | Engineer   | UG        | February   |     23 |
++--------+--------+--------+------------+-----------+------------+--------+
+2 rows in set (0.00 sec)
+
+
+
+
+mysql> SELECT Name as First_Name,Education as Qualification from EMPLOYEES;
++------------+---------------+
+| First_Name | Qualification |
++------------+---------------+
+| Ajay       | Doctorate     |
+| Babloo     | UG            |
+| Chavi      | PG            |
+| Dheeraj    | UG            |
+| Evina      | UG            |
++------------+---------------+
+5 rows in set (0.00 sec)
+
+
+
+
+
+
+mysql> SELECT * from EMPLOYEES where Name like 'A%';
++--------+------+--------+------------+-----------+------------+--------+
+| Emp_id | Name | Gender | Department | Education | Join_month | Salary |
++--------+------+--------+------------+-----------+------------+--------+
+|   1001 | Ajay | M      | Engineer   | Doctorate | January    |     25 |
++--------+------+--------+------------+-----------+------------+--------+
+1 row in set (0.00 sec)
+
+
+
+mysql> SELECT Department,SUM(Salary) FROM EMPLOYEES WHERE Education <>'UG' GRO
+UP BY Department HAVING SUM(Salary)>=20;
++------------+-------------+
+| Department | SUM(Salary) |
++------------+-------------+
+| Engineer   |          25 |
++------------+-------------+
+1 row in set (0.00 sec)
+
+
+
+
+mysql> SELECT DEPARTMENT,SUM(Salary)
+    -> FROM EMPLOYEES
+    -> GROUP BY Department
+    -> HAVING SUM(Salary)>=15
+    -> ORDER BY SUM(Salary)DESC;
++------------+-------------+
+| DEPARTMENT | SUM(Salary) |
++------------+-------------+
+| Engineer   |          48 |
+| HR         |          27 |
+| Marketing  |          16 |
++------------+-------------+
+3 rows in set (0.00 sec)
+
+
