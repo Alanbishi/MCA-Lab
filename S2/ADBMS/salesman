@@ -1,0 +1,70 @@
+mysql> select * from Customer;
++---------+----------------+------------+-------+-------------+
+| Cust_id | Cust_name      | City       | Grade | Salesman_id |
++---------+----------------+------------+-------+-------------+
+|    3001 | Brad Guzan     | London     |   100 |        5005 |
+|    3002 | Nick Rimando   | New York   |   100 |        5001 |
+|    3003 | Jozy Altidor   | Moscow     |   200 |        5007 |
+|    3004 | Fabian Johnson | Paris      |   300 |        5006 |
+|    3005 | Graham Zusi    | California |   200 |        5002 |
+|    3007 | Brad Davis     | New York   |   200 |        5001 |
+|    3008 | Julian Green   | London     |   300 |        5002 |
+|    3009 | Geof Cameron   | Berlin     |   100 |        5003 |
++---------+----------------+------------+-------+-------------+
+8 rows in set (0.00 sec)
+
+mysql> select * from Salesman;
++-------------+------------+----------+-----------+
+| Salesman_id | Name       | City     | Commision |
++-------------+------------+----------+-----------+
+|        5001 | James Hoog | New York |      0.15 |
+|        5002 | Nail Knite | Paris    |      0.13 |
+|        5003 | Lauson Hen | San Jose |      0.12 |
+|        5005 | Pit Alex   | London   |      0.11 |
+|        5006 | McLyon     | Paris    |      0.14 |
+|        5007 | Paul Adam  | Rome     |      0.13 |
++-------------+------------+----------+-----------+
+6 rows in set (0.02 sec)
+
+
+
+
+mysql> create table Orders
+    -> (Order_no int primary key,Purch_amt float(10,2),Order_date date,Customer_id int,Salesman_id int);
+Query OK, 0 rows affected (0.54 sec)
+
+mysql> DESC Orders;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| Order_no    | int(11)     | NO   | PRI | NULL    |       |
+| Purch_amt   | float(10,2) | YES  |     | NULL    |       |
+| Order_date  | date        | YES  |     | NULL    |       |
+| Customer_id | int(11)     | YES  |     | NULL    |       |
+| Salesman_id | int(11)     | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+5 rows in set (0.06 sec)
+
+
+
+
+
+mysql> ALTER TABLE Orders ADD FOREIGN KEY (Salesman_id) REFERENCES Salesman(Salesman_id);
+Query OK, 0 rows affected (0.81 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
+
+mysql> ALTER TABLE Orders ADD FOREIGN KEY (Salesman_id) REFERENCES Salesman(Salesman_id);
+Query OK, 0 rows affected (0.81 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
+
+
+
+
+
+

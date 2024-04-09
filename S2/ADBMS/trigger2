@@ -1,0 +1,57 @@
+mysql> use alan_db;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> CREATE TABLE Std1 (Student_id INT PRIMARY KEY, Name  VARCHAR(20), Sub1 INT, Sub2 INT, Sub3 INT, Sub4 INT, Sub5 INT, Total_mark INT, per_marks INT, Grade VARCHAR(20) );
+Query OK, 0 rows affected (0.35 sec)
+
+mysql> INSERT INTO Std1 (Student_id, Name, sub1, sub2, sub3, sub4, sub5) VALUES (1
+,'Albin Soman',0,0,0,0,0), (2,'Joy Maaman',0,0,0,0,0);
+Query OK, 2 rows affected (0.03 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from Std1;
++------------+-------------+------+------+------+------+------+------------+-----------+-------+
+| Student_id | Name        | Sub1 | Sub2 | Sub3 | Sub4 | Sub5 | Total_mark | per_marks | Grade |
++------------+-------------+------+------+------+------+------+------------+-----------+-------+
+|          1 | Albin Soman |    0 |    0 |    0 |    0 |    0 |       NULL |      NULL | NULL  |
+|          2 | Joy Maaman  |    0 |    0 |    0 |    0 |    0 |       NULL |      NULL | NULL  |
++------------+-------------+------+------+------+------+------+------------+-----------+-------+
+2 rows in set (0.00 sec)
+
+
+
+mysql> DELIMITER //
+mysql> CREATE TRIGGER std_before_update
+    -> BEFORE UPDATE ON Std1
+    -> FOR EACH ROW
+    -> BEGIN
+    -> DECLARE Total_mark INT;
+    -> DECLARE per_marks INT;
+    -> DECLARE Grade VARCHAR(20);
+    -> SET Total_mark = NEW.Sub1 + NEW.Sub2 + NEW.Sub3 + NEW.Sub4 + NEW.Sub5;
+    -> SET per_marks = Total_mark / 5;
+    -> IF per_marks >= 90 THEN 
+    -> SET Grade = 'EXCELLENT';
+    -> ELSEIF per_marks >= 75 AND per_marks < 90 THEN
+    -> SET Grade = 'VERY GOOD';
+    -> ELSEIF per_marks >= 60 AND per_marks < 75 THEN
+    -> SET Grade = 'GOOD';
+    -> ELSEIF per_marks >= 40 AND per_marks < 60 THEN
+    -> SET Grade = 'AVERAGE';
+    -> ELSE
+    -> SET Grade = 'NOT PROMOTED';
+    -> END IF;
+    -> SET NEW.Total_mark = Total_mark;
+    -> SET NEW.per_marks = per_marks;
+    -> SET NEW.Grade = Grade;
+    -> END;
+    -> //
+
+Query OK, 0 rows affected (0.09 sec)
+
+
+
+
+

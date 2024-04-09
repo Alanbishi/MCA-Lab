@@ -1,0 +1,288 @@
+mysql> desc Sailors;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| S_id   | int(11)     | YES  |     | NULL    |       |
+| S_name | varchar(30) | YES  |     | NULL    |       |
+| Rating | int(11)     | YES  |     | NULL    |       |
+| Age    | float       | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> INSERT INTO Sailors VALUES (29,'Brutus',1,33.0);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> INSERT INTO Sailors VALUES (31,'Lubber',8,55.5);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO Sailors VALUES (31,'Andy',8,25.5);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO Sailors VALUES (58,'Rusty',10,35.0);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO Sailors VALUES (64,'Horatio',7,35.0);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO Sailors VALUES (71,'Zorba',10,16.0);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> INSERT INTO Sailors VALUES (74,'Horatio',9,35.0);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO Sailors VALUES (85,'Art',3,25.5);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO Sailors VALUES (95,'Bob',3,63.5);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> SELECT * FROM Sailors;
++------+---------+--------+------+
+| S_id | S_name  | Rating | Age  |
++------+---------+--------+------+
+|   22 | Dustin  |      7 |   45 |
+|   22 | Dustin  |      7 |   45 |
+|   22 | Dustin  |      7 |   45 |
+|   29 | Brutus  |      1 |   33 |
+|   31 | Lubber  |      8 | 55.5 |
+|   31 | Andy    |      8 | 25.5 |
+|   58 | Rusty   |     10 |   35 |
+|   64 | Horatio |      7 |   35 |
+|   71 | Zorba   |     10 |   16 |
+|   74 | Horatio |      9 |   35 |
+|   85 | Art     |      3 | 25.5 |
+|   95 | Bob     |      3 | 63.5 |
++------+---------+--------+------+
+12 rows in set (0.00 sec)
+
+mysql> desc Sailors;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| S_id   | int(11)     | YES  |     | NULL    |       |
+| S_name | varchar(30) | YES  |     | NULL    |       |
+| Rating | int(11)     | YES  |     | NULL    |       |
+| Age    | float       | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql> desc Reserves;
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+| S_id  | int(11) | YES  |     | NULL    |       |
+| B_id  | int(11) | YES  |     | NULL    |       |
+| Day   | date    | YES  |     | NULL    |       |
++-------+---------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+
+mysql> use alan_db;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> INSERT INTO Reserves VALUES(22,101,'98-10-10');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> INSERT INTO Reserves VALUES(22,102,'98-10-10');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO Reserves VALUES(22,103,'98-08-10');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO Reserves VALUES(22,104,'98-07-10');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO Reserves VALUES(31,102,'98-10-11');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> INSERT INTO Reserves VALUES(31,103,'98-06-11');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> INSERT INTO Reserves VALUES(31,104,'98-12-11');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO Reserves VALUES(64,101,'98-05-09');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> INSERT INTO Reserves VALUES(74,103,'98-08-09');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> SELECT * FROM Sailors;
++------+---------+--------+------+
+| S_id | S_name  | Rating | Age  |
++------+---------+--------+------+
+|   22 | Dustin  |      7 |   45 |
+|   22 | Dustin  |      7 |   45 |
+|   22 | Dustin  |      7 |   45 |
+|   29 | Brutus  |      1 |   33 |
+|   31 | Lubber  |      8 | 55.5 |
+|   31 | Andy    |      8 | 25.5 |
+|   58 | Rusty   |     10 |   35 |
+|   64 | Horatio |      7 |   35 |
+|   71 | Zorba   |     10 |   16 |
+|   74 | Horatio |      9 |   35 |
+|   85 | Art     |      3 | 25.5 |
+|   95 | Bob     |      3 | 63.5 |
++------+---------+--------+------+
+12 rows in set (0.00 sec)
+
+mysql> SELECT * FROM Reserves;
++------+------+------------+
+| S_id | B_id | Day        |
++------+------+------------+
+|   22 |  101 | 1998-10-10 |
+|   22 |  102 | 1998-10-10 |
+|   22 |  103 | 1998-08-10 |
+|   22 |  104 | 1998-07-10 |
+|   31 |  102 | 1998-10-11 |
+|   31 |  103 | 1998-06-11 |
+|   31 |  104 | 1998-12-11 |
+|   64 |  101 | 1998-05-09 |
+|   74 |  103 | 1998-08-09 |
++------+------+------------+
+9 rows in set (0.00 sec)
+
+mysql> INSERT INTO Boats VALUES(101,'Interlake','Blue');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO Boats VALUES(102,'Interlake','Red');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO Boats VALUES(103,'Clipper','Green');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> INSERT INTO Boats VALUES(104,'Marine','Red');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> SELECT * FROM Boats;
++------+-----------+-------+
+| B_id | B_name    | Color |
++------+-----------+-------+
+|  101 | Interlake | Blue  |
+|  102 | Interlake | Red   |
+|  103 | Clipper   | Green |
+|  104 | Marine    | Red   |
++------+-----------+-------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT COUNT(DISTINCT Color) FROM Boats;
++-----------------------+
+| COUNT(DISTINCT Color) |
++-----------------------+
+|                     3 |
++-----------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT Sailors.* FROM Sailors, Reserves WHERE Sailors.S_id = Reserves.S_id
+AND Reserves.B_id = 101;
++------+---------+--------+------+
+| S_id | S_name  | Rating | Age  |
++------+---------+--------+------+
+|   22 | Dustin  |      7 |   45 |
+|   22 | Dustin  |      7 |   45 |
+|   22 | Dustin  |      7 |   45 |
+|   64 | Horatio |      7 |   35 |
++------+---------+--------+------+
+4 rows in set (0.01 sec)
+
+
+
+mysql> SELECT S_name FROM Sailors S, Reserves R WHERE S.S_id = R.S_id;
++---------+
+| S_name  |
++---------+
+| Dustin  |
+| Dustin  |
+| Dustin  |
+| Dustin  |
+| Dustin  |
+| Dustin  |
+| Dustin  |
+| Dustin  |
+| Dustin  |
+| Dustin  |
+| Dustin  |
+| Dustin  |
+| Lubber  |
+| Lubber  |
+| Lubber  |
+| Andy    |
+| Andy    |
+| Andy    |
+| Horatio |
+| Horatio |
++---------+
+20 rows in set (0.00 sec)
+
+mysql> select S_name,Age from Sailors where S_id in (select S_id from Reserves,Boats where    Reserves.B_id=Boats.B_id and Color='Red') order by Age;
++--------+------+
+| S_name | Age  |
++--------+------+
+| Andy   | 25.5 |
+| Dustin |   45 |
+| Dustin |   45 |
+| Dustin |   45 |
+| Lubber | 55.5 |
++--------+------+
+5 rows in set (0.00 sec)
+
+
+mysql>   SELECT b.B_name, s.S_name FROM Boats b INNER JOIN Reserves r ON b.B_id =
+r.S_id INNER JOIN Sailors s ON    s.S_id=r.S_id;
+Empty set (0.00 sec)
+
+mysql> SELECT DISTINCT S.S_id, S.S_name FROM Sailors S, Reserves R1, Reserves R2 WHERE S.S_id = R1.S_id AND S.S_id = R2.S_id AND R1.Day = R2.Day AND R1.B_id <> R2.B_id;
++------+--------+
+| S_id | S_name |
++------+--------+
+|   22 | Dustin |
++------+--------+
+1 row in set (0.00 sec)
+
+mysql> desc Boats;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| B_id   | int(11)     | YES  |     | NULL    |       |
+| B_name | varchar(30) | YES  |     | NULL    |       |
+| Color  | varchar(30) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> desc Sailors;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| S_id   | int(11)     | YES  |     | NULL    |       |
+| S_name | varchar(30) | YES  |     | NULL    |       |
+| Rating | int(11)     | YES  |     | NULL    |       |
+| Age    | float       | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> desc Reserves;
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+
+
+
+mysql> SELECT R.S_id
+    -> FROM Boats B, Reserves R
+    -> WHERE R.B_id = B.B_id AND B.Color = 'red'
+    -> UNION
+    -> SELECT R2.S_id
+    -> FROM Boats B2, Reserves R2
+    -> WHERE R2.B_id = B2.B_id AND B2.Color = 'green';
++------+
+| S_id |
++------+
+|   22 |
+|   31 |
+|   74 |
++------+
+3 rows in set (0.02 sec)
+
+
