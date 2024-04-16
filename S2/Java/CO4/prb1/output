@@ -1,0 +1,22 @@
+lab2@lab2-OptiPlex-380:~/Desktop/S2/Java/CO4/prb1$ java Package
+Enter the dimensions of rectangle--> 
+Enter the length: 
+4
+Enter the breath: 
+5
+The area of square: 20
+Enter the dimensions of square--> 
+Enter the side length: 
+6
+The area of the square is: 36
+Enter the dimensions of triangle-->: 
+Enter the height of the triangle: 
+5
+Enter the triangle base: 
+2
+The area is: 5.0
+Circles measurement--> 
+Enter the radius of the circle: 
+8
+The area of the circle is: 200.96
+
